@@ -2,8 +2,7 @@ import mongoose from 'mongoose'
 
 const todoSchema = new mongoose.Schema({
   title: String,
-  completed: Boolean,
-  userId: mongoose.Schema.Types.ObjectId,
+  completed: { type: Boolean, default: false },
 })
 
-export const Todo=mongoose.model('Todo', todoSchema)
+export default mongoose.model('Todo', todoSchema)
